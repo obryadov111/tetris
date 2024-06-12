@@ -4,9 +4,7 @@
              x:Class="proect01.Score">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="user" FontSize="30" TextColor="Red"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
