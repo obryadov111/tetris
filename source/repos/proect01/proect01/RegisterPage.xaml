@@ -1,15 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="proect01.LoginPage">
+             x:Class="proect01.RegisterPage">
     <ContentPage.Content>
         <StackLayout Padding="10">
+            <Label Text="Регистрация" FontSize="Large" HorizontalOptions="Center"/>
             <Entry x:Name="usernameEntry" Placeholder="Имя пользователя"/>
             <Entry x:Name="passwordEntry" Placeholder="Пароль" IsPassword="True"/>
-            <Button Text="Войти" Clicked="OnLoginButtonClicked"/>
             <Button Text="Регистрация" Clicked="OnRegisterButtonClicked"/>
-            <Label x:Name="resultLabel" TextColor="Red"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-    

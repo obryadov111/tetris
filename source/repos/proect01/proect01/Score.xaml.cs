@@ -14,7 +14,7 @@ namespace proect01
     {
         public class User
         { 
-            public int Id { get; set; }
+            public int Id_s { get; set; }
             public int Point { get; set; }
         }
 

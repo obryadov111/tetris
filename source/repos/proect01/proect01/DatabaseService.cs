@@ -27,13 +27,26 @@ namespace proect01
                 return result > 0;
             }
         }
-
+        public async void GetScore(int score_itog, string username)
+        {
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                var scorebd = new NpgsqlCommand("Select point from Score where id_s = (Select id_u from Users where Username = 'vova')", conn);
+                Console.WriteLine(score_itog);
+                int score = (int)scorebd.ExecuteScalar();
+                int intValue = Convert.ToInt32(score);
+                
+                var new_score = new NpgsqlCommand("UPDATE Score SET point = point+score_itog WHERE id_user = (Select id_u from Users where Username = username)", conn);
+                conn.Close();
+            }
+        }
         public void GetDataAndDisplay(Label dataLabel)
         {
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT (SELECT username FROM Users WHERE id_user = id), point FROM Score", conn))
+                using (var cmd = new NpgsqlCommand("SELECT (SELECT username FROM Users WHERE id_user = id_u), point FROM Score", conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
