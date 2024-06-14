@@ -4,7 +4,8 @@
              x:Class="proect01.MainPage">
 
     <StackLayout>
-        <Grid x:Name="grd" RowSpacing="1" ColumnSpacing="1" BackgroundColor="White" Margin="100,20,107,30" HeightRequest="417">
+        <Grid x:Name="grd" RowSpacing="1" ColumnSpacing="1" BackgroundColor="White" Margin="100,20,107,30" HeightRequest="417" >
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="10"  />
                 <RowDefinition Height="10" />
@@ -80,10 +81,14 @@
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Button x:Name="btnLow" Clicked="btnLowSite" Text="Low"/>
-        <Button x:Name="btnRight" Clicked="btnRightSite" Text="Right"/>
-        <Button x:Name="btnLeft" Clicked="btnLeftSite" Text="Left"/>
-        <Switch x:Name="swthc" IsToggled="False" Toggled="FutyreSwtch" Margin="0,100,0,0"/>
+        <Grid>
+            <Button x:Name="swthc" Text ="Start" Clicked="FutyreSwtch" Grid.Row="3"/>
+            <Button x:Name="btnLow" Clicked="btnLowSite" Text="Low" Grid.Row="2" Grid.Column="0"/>
+            <Button x:Name="btnRight" Clicked="btnRightSite" Text="Right" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="btnLeft" Clicked="btnLeftSite" Text="Left" Grid.Row="1" Grid.Column="0"/>
+            <Button x:Name="btnRot" Clicked="btnRotation" Text="Rotation" Grid.Row="2" Grid.Column="1"/>
+        </Grid>
+        <Label x:Name="scoreTxt" Text="Очки: 0"/>
     </StackLayout>
 
 </ContentPage>
